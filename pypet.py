@@ -67,7 +67,7 @@ def sleep(pet):
     pausecommand()
     petmenu(pet)
   else:
-    print pet['name'] + ' is too Sad to sleep!'
+    print pet['name'] + ' is too sad to sleep!'
     pausecommand()
     petmenu(pet)
     
@@ -119,13 +119,9 @@ def adopt(pet):
     
 ##pause command##
 def pausecommand():
-  import time
-  print 'returning to menu in 3...'
-  time.sleep(1) #pause for 1 seconds
-  print '2...'
-  time.sleep(1) #pause for 1 seconds
-  print '1...'
-  time.sleep(1) #pause for 1 seconds
+  while True:
+    if not raw_input('Press Enter to continue '):
+        break
 
 ##menu - adoption##
 def adoptmenu():
