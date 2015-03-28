@@ -1,3 +1,4 @@
+## Pypet Game v1.03 by alexinawe 
 ## With much thanks! - Pypet game based on guide from:
 ## http://www.thinkful.com/learn/python-programming-fundamentals/
 ## Special thanks to the author(s) of the guide:
@@ -129,9 +130,18 @@ def adoptmenu():
   print 'The following pets are available for'
   print 'adpotion.'
   print 'Which pet would you like to adopt?'
-  print '1. ' + fish['name']
-  print '2. ' + mouse['name']
-  print '3. ' + pig['name']
+  if fish['adopted'] == False:
+    print '1. ' + fish['name']
+  else:
+    print '1. empty'
+  if mouse['adopted'] == False:
+    print '2. ' + mouse['name']
+  else:
+    print '2. empty'
+  if pig['adopted'] == False:
+    print '3. ' + pig['name']
+  else:
+    print '3. empty'
   print '4. return to main menu'
   print '-------------------------------------'
   adoptinput = raw_input(':')
@@ -162,9 +172,18 @@ def mymenu():
   print '-------------------------------------'
   print 'Here are your adopted pypets.'
   print 'Which pet would you like to visit?'
-  print '1. ' + fish['name']
-  print '2. ' + mouse['name']
-  print '3. ' + pig['name']
+  if fish['adopted'] == True:
+    print '1. ' + fish['name']
+  else:
+    print '1. empty'
+  if mouse['adopted'] == True:
+    print '2. ' + mouse['name']
+  else:
+    print '2. empty'
+  if pig['adopted'] == True:
+    print '3. ' + pig['name']
+  else:
+    print '3. empty'
   print '4. return to main menu'
   print '-------------------------------------'
   myinput = raw_input(':')
@@ -222,7 +241,7 @@ def exitmenu():
   elif exitinput == '2':
     mainmenu()
   else:
-    print 'ERROR, please choose option 1, or 2.'
+    print 'ERROR, please choose option 1 or 2.'
     pausecommand()
     exitmenu()
 
